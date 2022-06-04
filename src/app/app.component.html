@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+  <head>
+    <title>Entrega</title>
+  </head>
+
+  <body>
+
+    <form [formGroup]="socio" (ngSubmit)="onSubmit()">
+
+      <label>
+        Nombre:
+        <input type="text" formControlName="inNombre" required minlength="3">
+        
+      </label>
+
+      <br>
+
+      <label>
+        Apellidos:
+        <input type="text" formControlName="inApellidos" required minlength="3">
+      </label>
+
+      <br>
+
+      <label>
+        Númerod de socio:
+        <input type="number" formControlName="inNumSocio">
+      </label>
+
+      <br>
+
+      <label>
+        DNI:
+        <input type="text" formControlName="inDNI" minlength="9" maxlength="9">
+      </label>
+
+      <br>
+
+      <label>
+        Teléfono:
+        <input type="number" formControlName="inTelefono">
+      </label>
+    
+      <br>
+
+      <label>
+        Sexo:
+        <select formControlName="inSexo">
+          <option value="Hombre">Masculino</option>
+          <option value="Mujer">Femenino</option>
+        </select>
+      </label>
+
+      <br><br>
+
+      <button type="submit" [disabled]="!socio.valid">Enviar Datos</button>
+
+    </form>
+
+  </body>
+
+
+</html>
+
